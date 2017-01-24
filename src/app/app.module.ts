@@ -16,8 +16,8 @@ import {AppComponent} from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    FlexLayoutModule.forRoot(),
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    FlexLayoutModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
