@@ -1,17 +1,17 @@
 md-card.card-demo
-  md-card-title Show & Hide Directives
-  md-card-subtitle Use the show hide APIs to responsively show or hide elements:
+  md-card-title
+    a(href='https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes', target='_blank')
+      | Mozilla Holy-Grail Layout
+  md-card-subtitle
+    | Illustrated here is the case where the page layout suited to a browser window must be optimized for a smart phone window. Not only must the elements reduce in size, but the order in which they are presented must change. Flexbox makes this very simple
   md-card-content
     .containerX
-      .coloredContainerX.box(fxLayout='row')
-        div(fxFlex='', fxHide='false', fxHide.gt-sm='')
-          | Shown on small device size.
-          br
-          |  Hidden on gt-sm devices.
-        div(fxFlex='', fxHide='false', fxHide.gt-md='')
-          | Shown on small and medium size devices.
-          br
-          |  Hidden on gt-md devices.
-        div(fxFlex='', fxShow='false', fxShow.gt-sm='')  Only show on gt-sm devices.
-        div(fxFlex='', fxShow='false', fxShow.md='')     Shown on medium size devices only.
-        div(fxFlex='', fxShow='false', fxShow.gt-lg='')  Shown on devices larger than 1200px wide only.
+      .colorNested.box(fxLayout='column')
+        header header
+        #main([fxLayout]='direction', fxLayout.xs='column', fxFlex='', (click)='toggleDirection()')
+          nav(fxFlex='1 6 20%', fxFlexOrder='', fxFlexOrder.xs='2')  nav
+          article(fxFlex='3 1 60%', fxFlexOrder='', fxFlexOrder.xs='1')  article
+          aside(fxFlex='1 6 20%', fxFlexOrder='', fxFlexOrder.xs='3')  aside
+        footer footer
+  md-card-footer.bottomPad
+    .hint(fxLayout="{{ direction }}", fxLayout.xs="column")

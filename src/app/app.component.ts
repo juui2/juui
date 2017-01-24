@@ -7,4 +7,8 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'juui!';
+  public direction = "row";
+  toggleDirection() {
+    this.direction = (this.direction === "column") ? "row" : "column";
+  }
 }
